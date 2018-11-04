@@ -8,7 +8,7 @@ public class Main {
 	static URL url;
 	static HttpURLConnection connection;
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		
 		final String URL = args[0];
 		final int UPDATES_PER_DAY = Integer.parseInt(args[1]);
