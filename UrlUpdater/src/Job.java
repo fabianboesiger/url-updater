@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Base64.Encoder;
 
 public class Job extends Thread {
 	
@@ -16,7 +17,13 @@ public class Job extends Thread {
 		connection = (HttpURLConnection) new URL(url).openConnection();
 		connection.setRequestMethod("GET");
 		connection.setRequestProperty("User-Agent", "Mozilla/5.0");
-			
+		
+		if(url.indexOf("@") >= 0) {
+			String authorization = url.substring(url.indexOf("//") + 2, url.indexOf("@"));
+			Encoder encoder = java.util.Base64.getEncoder();
+			authorization = new String(encoder.encode(authorization.getBytes()));			
+			connection.setRequestProperty("Authorization", "Basic " + authorization);
+		}
 	}
 	
 	@Override

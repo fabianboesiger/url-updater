@@ -1,1 +1,2 @@
 http://example.com/ 100
+https://benibenj:ETH123456@freedns.afraid.org/nic/update?hostname=we.serve.games 100
