@@ -21,6 +21,7 @@ public class Job extends Thread {
 	
 	@Override
 	public void run() {
+		
 		while(true) {
 
 			try {
@@ -36,6 +37,7 @@ public class Job extends Thread {
 			}
 			
 		}
+		
 	}
 	
 }
